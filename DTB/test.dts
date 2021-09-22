@@ -1,0 +1,23 @@
+/dts-v1/;
+
+/ {
+	node@0 {
+		a-string-property = "A string";
+		a-string-list-property = "first string", "second string";
+		a-byte-data-property = <0x01 0x23 0x34 0x56>;
+		child-node@0 {
+			first-child-property;
+			second-child-property = <1>;
+			third-child-property = <&node1>;
+			a-string-property = "Hello, world";
+		};
+		child-node@1 {
+		};
+	};
+	node1: node@1 {
+		an-empty-property;
+		a-cell-property = <1 2 3 4>; /* each number (cell) is a uint32 */
+		child-node@0 {
+		};
+	};
+};
